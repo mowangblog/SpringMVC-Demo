@@ -15,7 +15,17 @@
   <a th:href="@{/testApplication}">通过Application向Application域对象传递对象</a><br/><br/>
   <a th:href="@{/testView}">通过thymeleaf跳转</a><br/>
   <a th:href="@{/testForward}">通过forward跳转</a><br/>
-  <a th:href="@{/testRedirect}">通过Redirect跳转</a><br/>
+  <a th:href="@{/testRedirect}">通过Redirect跳转</a><br/><br/>
+  <a th:href="@{/user}">查询所有用户信息</a><br/>
+  <a th:href="@{/user/1}">根据id查询所有用户信息</a><br/>
+
+  <form th:action="@{/user}" method="post">
+    用户名：<input type="text" name="name">
+    密码：<input type="password" name="password">
+    邮箱：<input type="email" name="email">
+    年龄：<input type="text" name="age">
+    <input type="submit" value="提交">
+  </form>
 
 </body>
 </html>
