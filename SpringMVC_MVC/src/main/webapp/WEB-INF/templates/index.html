@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>首页</h1>
+  <a th:href="@{/testScopeByServlet}">通过ServletAPI向request域对象传递对象</a><br/>
+  <a th:href="@{/testModelAndView}">通过ModelAndView向request域对象传递对象</a><br/>
+  <a th:href="@{/testModel}">通过Model向request域对象传递对象</a><br/>
+  <a th:href="@{/testMap}">通过Map向request域对象传递对象</a><br/>
+  <a th:href="@{/testModelMap}">通过testModelMap向request域对象传递对象</a><br/>
+  <a th:href="@{/testSession}">通过Session向Session域对象传递对象</a><br/>
+  <a th:href="@{/testApplication}">通过Application向Application域对象传递对象</a><br/><br/>
+  <a th:href="@{/testView}">通过thymeleaf跳转</a><br/>
+  <a th:href="@{/testForward}">通过forward跳转</a><br/>
+  <a th:href="@{/testRedirect}">通过Redirect跳转</a><br/>
+
+</body>
+</html>
