@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form th:action="@{/user}" method="post">
+    <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="id" th:value="${user.id}">
+    用户名：<input type="text" name="name" th:value="${user.name}">
+    密码：<input type="password" name="password" th:value="${user.password}">
+    邮箱：<input type="email" name="email" th:value="${user.email}">
+    年龄：<input type="text" name="age" th:value="${user.age}">
+    <input type="submit" value="修改">
+  </form>
+</body>
+</html>

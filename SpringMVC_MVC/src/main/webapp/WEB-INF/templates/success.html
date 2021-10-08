@@ -10,5 +10,61 @@
 <p th:text="${session.scope}"></p>
 <p th:text="${application.scope}"></p>
 
+<table border="1" cellpadding="0" cellspacing="0" style="text-align: center;" id="dataTable">
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            password
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            age
+        </th>
+        <th>
+            options
+        </th>
+    </tr>
+    <tr th:each="user:${user}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.age}"></td>
+        <td >
+            <a class="deleteA" @click="deleteEmployee" th:href="@{'/user/'+${user.id}}">删除</a>
+            <a th:href="@{'/user/'+${user.id}}">修改</a>
+        </td>
+    </tr>
+</table>
+<form id="delete_form" method="post">
+    <input type="hidden" name="_method" value="delete">
+</form>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.13/vue.js"></script>
+<script type="text/javascript">
+    var vue = new Vue({
+        el:"#dataTable",
+        methods:{
+            //event表示当前事件
+            deleteEmployee:function (event) {
+                //通过id获取表单标签
+                var delete_form = document.getElementById("delete_form");
+                //将触发事件的超链接的href属性为表单的action属性赋值
+                delete_form.action = event.target.href;
+                //提交表单
+                delete_form.submit();
+                //阻止超链接的默认跳转行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
