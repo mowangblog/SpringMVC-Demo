@@ -35,10 +35,17 @@
 
     <mvc:view-controller path="/" view-name="index"/>
 
+    <!--开发静态资源的访问-->
+    <mvc:default-servlet-handler />
+
+    <!--配置文件上传解析器，将上传的文件封装为MultipartFile-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+    </bean>
+
     <!--开启mvc注解驱动-->
     <mvc:annotation-driven />
 
-    <!--开发静态资源的访问-->
-    <mvc:default-servlet-handler />
+
 
 </beans>
