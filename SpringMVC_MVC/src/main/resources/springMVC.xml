@@ -8,7 +8,7 @@
                             http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--扫描组件-->
-    <context:component-scan base-package="top.mowang.controller,top.mowang.dao">
+    <context:component-scan base-package="top.mowang">
     </context:component-scan>
 
 
@@ -46,6 +46,25 @@
     <!--开启mvc注解驱动-->
     <mvc:annotation-driven />
 
+    <mvc:interceptors>
+<!--        <ref bean="fistInterceptor"/>-->
+<!--        <bean class="top.mowang.interceptors.FistInterceptor"></bean>-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/"/>
+            <ref bean="fistInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
+    <!--配置异常处理-->
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="exceptionMappings">-->
+<!--            <props>-->
+<!--                <prop key="java.lang.ArithmeticException">error</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+        <!--设置将异常信息共享到请求域-->
+<!--        <property name="exceptionAttribute" value="ex"/>-->
+<!--    </bean>-->
 
 </beans>
