@@ -2,7 +2,9 @@
 
 [![](https://res.mowangblog.top/img/2021/10/website-blog-lightgrey)](https://mowangblog.top) [![](https://res.mowangblog.top/img/2021/10/bilibili-video-orange)](https://www.bilibili.com/video/BV1Ry4y1574R)
 
-📓Spring MVC 框架使用演示和详细笔记
+📓Spring MVC 框架使用演示，点击在线文档查看详细笔记
+
+[![](https://img.shields.io/badge/在线-文档-yellowgreen)](https://mowangblog.github.io/SpringMVC-Demo/#/)
 
 ## 目录
 
